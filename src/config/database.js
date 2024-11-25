@@ -4,7 +4,7 @@ let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'db_capstone_api'
+    database: 'db_herbamate'
 });
 
 connection.connect(function (error) {
