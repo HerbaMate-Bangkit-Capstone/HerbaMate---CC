@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const connection = require('../config/database');
+const { predictHerbs } = require('../services/inferenceService');
 
 //GET all data Herbals
 router.get('/', function (req, res) {
@@ -125,6 +126,23 @@ router.post('/store', [
             }
         });
     });
+});
+
+//POST Rekomendasi Herbs
+router.post('/predict', async (req, res) => {
+    const { system, symptoms } = req.body;
+
+    if (!system || !symptoms || symptoms.length === 0) {
+        return res.status(400).json({ error: "Sistem dan gejala harus diisi!" });
+    }
+
+    try {
+        const recommendedHerbs = await predictHerbs(system, symptoms);
+        return res.json({ recommendedHerbs });
+    } catch (error) {
+        console.error("Error saat memproses prediksi:", error);
+        return res.status(500).json({ error: "Terjadi kesalahan saat memproses prediksi." });
+    }
 });
 
 module.exports = router;
