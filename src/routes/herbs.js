@@ -1,82 +1,92 @@
 const express = require('express');
-const router = express.Router();
-const { body, validationResult } = require('express-validator');
-const connection = require('../config/database');
-const { predictHerbs } = require('../services/inferenceService');
+const routerHerbs = express.Router();;
+const database = require('../config/database');
 
-//GET all data Herbals
-router.get('/', function (req, res) {
-    connection.query('SELECT id, name, latin_name, image_link FROM herbals', function (err, rows) {
+const { body, validationResult } = require('express-validator')
+
+
+//GET all data Herbs
+routerHerbs.get('/', function (req, res) {
+    database.query('SELECT id, name, latin_name, image_link FROM herbals', function (err, rows) {
         if (err) {
             return res.status(500).json({
                 code: 500,
-                message: 'Internal Server Error.',
+                message: 'Internal Server Error',
             });
         }
 
         if (rows.length === 0) {
             return res.status(404).json({
                 code: 404,
-                message: 'Data Herb Not Found!',
+                message: 'No herbs found in the database',
             });
         }
 
+        const herbs = rows.map(row => {
+            return {
+                id: row.id,
+                name: row.name,
+                latin_name: row.latin_name,
+                image_link: row.image_link
+            };
+        });
+
         return res.status(200).json({
             code: 200,
-            message: 'Success Get All Data Herbal.',
-            data: rows,
+            message: 'Success Get All Data Herbal',
+            data: herbs,
         });
     });
 });
 
-//GET data Herbals by ID
-router.get('/:id', function (req, res) {
+
+//GET data Herb by ID
+routerHerbs.get('/:id', function (req, res) {
     let id = req.params.id;
 
-    connection.query('SELECT * FROM herbals WHERE id = ?', [id], function (err, rows) {
+    database.query('SELECT * FROM herbals WHERE id = ?', [id], function (err, rows) {
         if (err) {
             return res.status(500).json({
                 code: 500,
-                message: 'Internal Server Error.',
+                message: 'Internal Server Error',
             });
         }
 
-        if (rows.length <= 0) {
+        if (rows.length === 0) {
             return res.status(404).json({
                 code: 404,
-                message: 'Data Herb Not Found!',
+                message: 'Herb Not Found',
             });
         }
 
-        // Mengambil data dari hasil query dan parsing JSON jika perlu
         const herb = {
             id: rows[0].id,
             name: rows[0].name,
             latin_name: rows[0].latin_name,
-            local_name: JSON.parse(rows[0].local_name), // Mengonversi string JSON kembali ke array
+            local_name: JSON.parse(rows[0].local_name),
             image_link: rows[0].image_link,
             description: rows[0].description,
-            disease: JSON.parse(rows[0].disease), // Mengonversi string JSON kembali ke array
+            disease: JSON.parse(rows[0].disease),
             composition: rows[0].composition,
         };
 
         return res.status(200).json({
             code: 200,
-            message: 'Success Get Detail Herbal.',
+            message: 'Success Get Herb Details',
             data: herb,
         });
     });
 });
 
 //POST data Herbals
-router.post('/store', [
-    body('name').notEmpty(), // Validasi name wajib diisi
-    body('latin_name').notEmpty(), // Validasi latin_name wajib diisi
-    body('local_name').isArray(), // Validasi local_name harus array
-    body('image_link').notEmpty(), // Validasi image_link wajib diisi
-    body('description').notEmpty(), // Validasi description wajib diisi
-    body('disease').isArray(), // Validasi disease harus array
-    body('composition').notEmpty() // Validasi composition wajib diisi
+routerHerbs.post('/store', [
+    body('name').notEmpty(),
+    body('latin_name').notEmpty(),
+    body('local_name').isArray(),
+    body('image_link').notEmpty(),
+    body('description').notEmpty(),
+    body('disease').isArray(),
+    body('composition').notEmpty()
 ], (req, res) => {
 
     // Mengecek jika ada error validasi
@@ -85,22 +95,21 @@ router.post('/store', [
         return res.status(422).json({
             code: 422,
             message: 'Validation Error',
-            errors: errors.array() // Menampilkan error validasi jika ada
+            errors: errors.array()
         });
     }
 
-    // Jika tidak ada error validasi, lanjutkan dengan menyimpan data
     let formData = {
         name: req.body.name,
         latin_name: req.body.latin_name,
-        local_name: JSON.stringify(req.body.local_name),  // Menyimpan data sebagai string JSON yang valid
+        local_name: JSON.stringify(req.body.local_name),
         image_link: req.body.image_link,
         description: req.body.description,
-        disease: JSON.stringify(req.body.disease),  // Menyimpan data sebagai string JSON yang valid
+        disease: JSON.stringify(req.body.disease),
         composition: req.body.composition
     };
 
-    connection.query('INSERT INTO herbals SET ?', formData, function (err, result) {
+    database.query('INSERT INTO herbals SET ?', formData, function (err, result) {
         if (err) {
             return res.status(500).json({
                 code: 500,
@@ -108,7 +117,6 @@ router.post('/store', [
             });
         }
 
-        // Mendapatkan ID yang dihasilkan otomatis oleh MySQL
         const insertedId = result.insertId;
 
         return res.status(201).json({
@@ -118,31 +126,48 @@ router.post('/store', [
                 id: insertedId,
                 name: formData.name,
                 latin_name: formData.latin_name,
-                local_name: JSON.parse(formData.local_name), // Mengonversi string JSON kembali menjadi array
+                local_name: JSON.parse(formData.local_name),
                 image_link: formData.image_link,
                 description: formData.description,
-                disease: JSON.parse(formData.disease), // Mengonversi string JSON kembali menjadi array
+                disease: JSON.parse(formData.disease),
                 composition: formData.composition
             }
         });
     });
 });
 
-//POST Rekomendasi Herbs
-router.post('/predict', async (req, res) => {
-    const { system, symptoms } = req.body;
+//DELETE data Herb by ID
+routerHerbs.delete('/delete/:id', function (req, res) {
 
-    if (!system || !symptoms || symptoms.length === 0) {
-        return res.status(400).json({ error: "Sistem dan gejala harus diisi!" });
+    let id = req.params.id;
+
+    if (isNaN(id)) {
+        return res.status(400).json({
+            code: 400,
+            message: 'Invalid ID format.'
+        });
     }
 
-    try {
-        const recommendedHerbs = await predictHerbs(system, symptoms);
-        return res.json({ recommendedHerbs });
-    } catch (error) {
-        console.error("Error saat memproses prediksi:", error);
-        return res.status(500).json({ error: "Terjadi kesalahan saat memproses prediksi." });
-    }
+    database.query('DELETE FROM herbals WHERE id = ?', [id], function (err, result) {
+        if (err) {
+            return res.status(500).json({
+                code: 500,
+                message: 'Internal Server Error'
+            });
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                code: 404,
+                message: 'Data Not Found'
+            });
+        }
+
+        return res.status(200).json({
+            code: 200,
+            message: 'Delete Data Successfully'
+        });
+    });
 });
 
-module.exports = router;
+module.exports = routerHerbs;
