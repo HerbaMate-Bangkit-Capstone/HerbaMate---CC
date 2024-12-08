@@ -10,7 +10,7 @@ routerSearch.get('/search', (req, res) => {
         return res.status(400).send('Query parameter "q" is required');
     }
 
-    const sql = 'SELECT * FROM herbals WHERE name LIKE ?';
+    const sql = 'SELECT id, name, latin_name, image_link, description FROM herbals WHERE name LIKE ?';
 
     database.query(sql, [`%${searchQuery}%`], (err, results) => {
         if (err) {
@@ -30,11 +30,8 @@ routerSearch.get('/search', (req, res) => {
                 id: row.id,
                 name: row.name,
                 latin_name: row.latin_name,
-                local_name: JSON.parse(row.local_name),
                 image_link: row.image_link,
                 description: row.description,
-                disease: JSON.parse(row.disease),
-                composition: row.composition,
             };
         });
 
