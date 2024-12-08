@@ -2,6 +2,7 @@ const express = require('express');
 const routerSearch = express.Router();;
 const database = require('../config/database');
 
+//GET to search data Herbs
 routerSearch.get('/search', (req, res) => {
     const searchQuery = req.query.q;
 

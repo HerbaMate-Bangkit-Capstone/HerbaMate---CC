@@ -7,7 +7,7 @@ const { body, validationResult } = require('express-validator')
 
 //GET all data Herbs
 routerHerbs.get('/', function (req, res) {
-    database.query('SELECT id, name, latin_name, image_link FROM herbals', function (err, rows) {
+    database.query('SELECT id, name, latin_name, image_link, description FROM herbals', function (err, rows) {
         if (err) {
             return res.status(500).json({
                 code: 500,
@@ -27,7 +27,8 @@ routerHerbs.get('/', function (req, res) {
                 id: row.id,
                 name: row.name,
                 latin_name: row.latin_name,
-                image_link: row.image_link
+                image_link: row.image_link,
+                description: row.description
             };
         });
 
@@ -38,7 +39,6 @@ routerHerbs.get('/', function (req, res) {
         });
     });
 });
-
 
 //GET data Herb by ID
 routerHerbs.get('/:id', function (req, res) {
