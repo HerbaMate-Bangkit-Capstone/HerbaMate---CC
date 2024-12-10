@@ -15,7 +15,7 @@ dan Google Cloud Storage untuk mengambil data gambar dan dataset herbal aplikasi
 Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
 1. Clone repositori ini:
    ```bash
-   [git clone https://github.com/HerbaMate-Bangkit-Capstone/HerbaMate--Model---CC.git](https://github.com/HerbaMate-Bangkit-Capstone/HerbaMate--Mobile---CC.git)
+   git clone https://github.com/HerbaMate-Bangkit-Capstone/HerbaMate--Model---CC.git
 
 2. Extract dan masuk ke folder project:
    ```bash
@@ -26,13 +26,15 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
    npm install body-parser cors express express-validator mysql2
 
 4. Install nodemon untuk start aplikasi dengan refresh otomatis:
-   ```bash
-   npm install -g nodemon
+   - Install nodemon secara global:
+     ```bash
+     npm install -g nodemon
 
-   ```bash
-   npm install --save-dev nodemon
+   - Install nodel secara lokal di project:
+     ```bash
+     npm install --save-dev nodemon
 
-5. Create database dan tabel baru pada mysql:
+6. Create database dan tabel baru pada mysql:
    ```bash
    CREATE TABLE herbals (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -45,7 +47,7 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
     composition TEXT
     );
 
-6. Lakukan konfigurasi database pada file database.js:
+7. Lakukan konfigurasi database pada file database.js:
    ```bash
    const db = mysql.createConnection({
         host: 'nama_host_Anda',
@@ -54,14 +56,14 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
         database: 'nama_database'
     });
 
-7. Jalankan program:
+8. Jalankan program:
    ```bash
    npm run start
 
    ```bash
    npm run start:dev
 
-8. Testing pada Postman:
+9. Testing pada Postman:
    ```bash
    http://localhost:3000/herb
 
@@ -77,7 +79,7 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
    ```bash
    http://localhost:3000/herbs/search?q=nama_tanaman
 
-9. Contoh Request:
+10. Contoh Request:
    ```bash
    {
     "name": "Rambutan",
