@@ -67,26 +67,26 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
 
 10. Testing pada Postman:
     - GET all data herbs:
-     ```bash
+      ```bash
      http://localhost:3000/herb
-
+    
     - GET detail data by id:
-     ```bash
+      ```bash
      http://localhost:3000/herb/{Id}
-
+    
     - POST data herb:
-     ```bash
+      ```bash
      http://localhost:3000/herb/store
-
+    
     - DELETE data herb by id:
-     ```bash
+      ```bash
      http://localhost:3000/herb/delete
-
+    
     - GET data by keyword to search:
-     ```bash
+      ```bash
      http://localhost:3000/herbs/search?q=nama_tanaman
 
-11. Contoh Request:
+12. Contoh Request:
    ```bash
    {
     "name": "Rambutan",
