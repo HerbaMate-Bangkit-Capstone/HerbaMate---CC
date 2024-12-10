@@ -57,29 +57,36 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
     });
 
 8. Jalankan program:
-   ```bash
-   npm run start
+   - Run project dengan node:
+     ```bash
+     npm run start
 
-   ```bash
-   npm run start:dev
+   - Run project dengan nodemon:
+     ```bash
+     npm run start:dev
 
-9. Testing pada Postman:
-   ```bash
-   http://localhost:3000/herb
+10. Testing pada Postman:
+    - GET all data herbs:
+     ```bash
+     http://localhost:3000/herb
 
-   ```bash
-   http://localhost:3000/herb/{Id}
+   - GET detail data by id:
+     ```bash
+     http://localhost:3000/herb/{Id}
 
-   ```bash
-   http://localhost:3000/herb/store
+   - POST data herb:
+     ```bash
+     http://localhost:3000/herb/store
 
-   ```bash
-   http://localhost:3000/herb/delete
+   - DELETE data herb by id:
+     ```bash
+     http://localhost:3000/herb/delete
 
-   ```bash
-   http://localhost:3000/herbs/search?q=nama_tanaman
+   - GET data by keyword to search:
+     ```bash
+     http://localhost:3000/herbs/search?q=nama_tanaman
 
-10. Contoh Request:
+11. Contoh Request:
    ```bash
    {
     "name": "Rambutan",
