@@ -70,19 +70,19 @@ Langkah-langkah untuk menginstal dan menjalankan proyek ini di lokal.
      ```bash
      http://localhost:3000/herb
 
-   - GET detail data by id:
+    - GET detail data by id:
      ```bash
      http://localhost:3000/herb/{Id}
 
-   - POST data herb:
+    - POST data herb:
      ```bash
      http://localhost:3000/herb/store
 
-   - DELETE data herb by id:
+    - DELETE data herb by id:
      ```bash
      http://localhost:3000/herb/delete
 
-   - GET data by keyword to search:
+    - GET data by keyword to search:
      ```bash
      http://localhost:3000/herbs/search?q=nama_tanaman
 
