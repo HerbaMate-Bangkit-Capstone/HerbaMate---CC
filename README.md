@@ -118,37 +118,37 @@ Steps to install and run this project on local.
        - Response body:
          ```bash
          {
-    "code": 200,
-    "message": "Success Get Herb Details",
-    "data": {
-        "id": 1,
-        "name": "Adas",
-        "latin_name": "(Foeniculum vulgare)",
-        "local_name": [
-            "Hades (Sunda, Bali)",
-            "Adas Londa",
-            "Adas Landi (Jawa)",
-            "Adhas (Madura)",
-            "Wala Wunga (Sumba)",
-            "Das Pedas (Aceh)",
-            "Adeh, Manih (Minangkabau)"
-        ],
-        "image_link": "image_link_herbals",
-        "description": "tanaman rempah yang memiliki aroma khas dan sering digunakan sebagai bumbu dapur maupun obat tradisional. Tanaman ini memiliki daun halus berbentuk panjang dengan biji kecil yang mengandung minyak atsiri. Biasanya tumbuh di daerah beriklim hangat dengan tanah yang subur. Selain digunakan dalam masakan, tanaman ini dipercaya memiliki efek menenangkan. Khasiat utamanya meliputi meredakan perut kembung, memperlancar pencernaan, dan mengatasi gangguan pernapasan ringan.",
-        "disease": [
-            "Batuk",
-            "Sesak nafas",
-            "Sariawan",
-            "Haid tidak teratur",
-            "Perut kembung",
-            "Mual",
-            "ASI sedikit",
-            "Diare",
-            "Susah tidur"
-        ],
-        "composition": "Minyak atsiri (anethole, fenchone, estragole), flavonoid, vitamin C, kalsium, magnesium, serat."
-    }
-}
+            "code": 200,
+            "message": "Success Get Herb Details",
+            "data": {
+                "id": 1,
+                "name": "Adas",
+                "latin_name": "(Foeniculum vulgare)",
+                "local_name": [
+                        "Hades (Sunda, Bali)",
+                        "Adas Londa",
+                        "Adas Landi (Jawa)",
+                        "Adhas (Madura)",
+                        "Wala Wunga (Sumba)",
+                        "Das Pedas (Aceh)",
+                        "Adeh, Manih (Minangkabau)"
+                  ],
+                "image_link": "image_link_herbals",
+                "description": "tanaman rempah yang memiliki aroma khas dan sering digunakan sebagai bumbu dapur maupun obat tradisional. Tanaman ini memiliki daun halus berbentuk panjang dengan biji kecil yang mengandung minyak atsiri. Biasanya tumbuh di daerah beriklim hangat dengan tanah yang subur. Selain digunakan dalam masakan, tanaman ini dipercaya memiliki efek menenangkan. Khasiat utamanya meliputi meredakan perut kembung, memperlancar pencernaan, dan mengatasi gangguan pernapasan ringan.",
+                "disease": [
+                      "Batuk",
+                      "Sesak nafas",
+                      "Sariawan",
+                      "Haid tidak teratur",
+                      "Perut kembung",
+                      "Mual",
+                      "ASI sedikit",
+                      "Diare",
+                      "Susah tidur"
+                  ],
+                "composition": "Minyak atsiri (anethole, fenchone, estragole), flavonoid, vitamin C, kalsium, magnesium, serat."
+             }
+         }
 
      - POST data herb:
        - Endpoint:
@@ -162,42 +162,42 @@ Steps to install and run this project on local.
        - Request body:
          ```bash
          {
-    "name": "Rambutan",
-    "latin_name": "(Nephelium lappaceum)",
-    "local_name": 
-        ["Corogol (Jawa)", "Sagalong (Kalimantan)", "Lahi (Nusa Tenggara)"],
-    "image_link": "image_link_herbals",
-    "description": "tanaman buah tropis dengan kulit berbulu yang sering dikonsumsi. Buahnya kaya akan vitamin C dan senyawa bioaktif dengan sifat antioksidan. Khasiatnya meliputi membantu meningkatkan daya tahan tubuh, melindungi kesehatan kulit, dan memperbaiki fungsi pencernaan. Selain itu, tanaman ini juga dipercaya mampu menurunkan kadar kolesterol.",
-    "disease": ["Sakit tenggorokan", "Gangguan pencernaan", "Kulit gatal", "Kelelahan", "Batuk"],
-    "composition": "Vitamin C, flavonoid, saponin"
-}
+            "name": "Rambutan",
+            "latin_name": "(Nephelium lappaceum)",
+            "local_name": 
+                  ["Corogol (Jawa)", "Sagalong (Kalimantan)", "Lahi (Nusa Tenggara)"],
+            "image_link": "image_link_herbals",
+            "description": "tanaman buah tropis dengan kulit berbulu yang sering dikonsumsi. Buahnya kaya akan vitamin C dan senyawa bioaktif dengan sifat antioksidan. Khasiatnya meliputi membantu meningkatkan daya tahan tubuh, melindungi kesehatan kulit, dan memperbaiki fungsi pencernaan. Selain itu, tanaman ini juga dipercaya mampu menurunkan kadar kolesterol.",
+            "disease": ["Sakit tenggorokan", "Gangguan pencernaan", "Kulit gatal", "Kelelahan", "Batuk"],
+            "composition": "Vitamin C, flavonoid, saponin"
+          }
 
        - Response body:
          ```bash
          {
-    "code": 201,
-    "message": "Data added successfully",
-    "data": {
-        "id": 203,
-        "name": "Rambutan",
-        "latin_name": "(Nephelium lappaceum)",
-        "local_name": [
-            "Corogol (Jawa)",
-            "Sagalong (Kalimantan)",
-            "Lahi (Nusa Tenggara)"
-        ],
-        "image_link": "image_link_herbals",
-        "description": "tanaman buah tropis dengan kulit berbulu yang sering dikonsumsi. Buahnya kaya akan vitamin C dan senyawa bioaktif dengan sifat antioksidan. Khasiatnya meliputi membantu meningkatkan daya tahan tubuh, melindungi kesehatan kulit, dan memperbaiki fungsi pencernaan. Selain itu, tanaman ini juga dipercaya mampu menurunkan kadar kolesterol.",
-        "disease": [
-            "Sakit tenggorokan",
-            "Gangguan pencernaan",
-            "Kulit gatal",
-            "Kelelahan",
-            "Batuk"
-        ],
-        "composition": "Vitamin C, flavonoid, saponin"
-    }
-}
+            "code": 201,
+            "message": "Data added successfully",
+            "data": {
+                "id": 203,
+                "name": "Rambutan",
+                "latin_name": "(Nephelium lappaceum)",
+                "local_name": [
+                        "Corogol (Jawa)",
+                        "Sagalong (Kalimantan)",
+                        "Lahi (Nusa Tenggara)"
+                  ],
+                "image_link": "image_link_herbals",
+                "description": "tanaman buah tropis dengan kulit berbulu yang sering dikonsumsi. Buahnya kaya akan vitamin C dan senyawa bioaktif dengan sifat antioksidan. Khasiatnya meliputi membantu meningkatkan daya tahan tubuh, melindungi kesehatan kulit, dan memperbaiki fungsi pencernaan. Selain itu, tanaman ini juga dipercaya mampu menurunkan kadar kolesterol.",
+                "disease": [
+                        "Sakit tenggorokan",
+                        "Gangguan pencernaan",
+                        "Kulit gatal",
+                        "Kelelahan",
+                        "Batuk"
+                  ],
+                "composition": "Vitamin C, flavonoid, saponin"
+            }
+         }
 
      - DELETE data herb by ID:
        - Endpoint:
@@ -215,9 +215,9 @@ Steps to install and run this project on local.
        - Response body:
          ```bash
          {
-    "code": 200,
-    "message": "Delete Data Successfully"
-}
+            "code": 200,
+            "message": "Delete Data Successfully"
+          }
 
    - Search
      - Endpoint:
@@ -235,46 +235,46 @@ Steps to install and run this project on local.
      - Response body:
        ```bash
        {
-    "code": 200,
-    "message": "Herbs found successfully",
-    "data": [
-        {
-            "id": 187,
-            "name": "Temu Hitam",
-            "latin_name": "(Curcuma aeruginosa)",
-            "image_link": "https://storage.googleapis.com/c242-ps076-herbamate-bucket/img-homapage/Temu%20hitam.jpg",
-            "description": "tanaman herbal dengan rimpang gelap yang sering digunakan untuk kesehatan. Rimpangnya mengandung senyawa bioaktif dengan sifat antiinflamasi dan antikanker. Khasiatnya meliputi membantu meningkatkan fungsi hati, melindungi tubuh dari radikal bebas, dan memperbaiki kesehatan pencernaan. Selain itu, tanaman ini juga dipercaya mampu meningkatkan daya tahan tubuh."
-        },
-        {
-            "id": 188,
-            "name": "Temu Kunci",
-            "latin_name": "(Boesenbergia pandurata)",
-            "image_link": "https://storage.googleapis.com/c242-ps076-herbamate-bucket/img-homapage/Temu%20kunci.jpg",
-            "description": "tanaman herbal dengan rimpang kecil yang sering digunakan dalam pengobatan tradisional. Rimpangnya mengandung senyawa bioaktif dengan sifat antioksidan dan memperbaiki metabolisme. Khasiatnya meliputi membantu meningkatkan nafsu makan, menjaga kesehatan pencernaan, dan memperbaiki fungsi hati. Selain itu, tanaman ini juga dipercaya mampu meningkatkan daya tahan tubuh."
-        },
-        {
-            "id": 189,
-            "name": "Temu Putih",
-            "latin_name": "(Curcuma zedoaria)",
-            "image_link": "https://storage.googleapis.com/c242-ps076-herbamate-bucket/img-homapage/Temu%20putih.jpg",
-            "description": "tanaman herbal dengan rimpang putih yang sering digunakan untuk kesehatan. Rimpangnya mengandung senyawa bioaktif dengan sifat antikanker dan antiinflamasi. Khasiatnya meliputi membantu meningkatkan fungsi hati, melawan sel kanker, dan memperbaiki kesehatan pencernaan. Selain itu, tanaman ini juga dipercaya mampu memperbaiki metabolisme tubuh."
-        },
-        {
-            "id": 190,
-            "name": "Temu Putri",
-            "latin_name": "(Curcuma petiolata)",
-            "image_link": "https://storage.googleapis.com/c242-ps076-herbamate-bucket/img-homapage/Temu%20putri.jpg",
-            "description": "tanaman herbal yang memiliki rimpang khas dengan aroma harum dan digunakan secara tradisional dalam pengobatan herbal. Rimpangnya mengandung senyawa aktif seperti kurkumin, minyak atsiri, dan antioksidan. Khasiatnya meliputi membantu mengatasi gangguan pencernaan, meredakan peradangan, dan meningkatkan daya tahan tubuh. Selain untuk kesehatan, tanaman ini juga memiliki nilai estetika sebagai tanaman hias karena bentuk daunnya yang menarik."
-        },
-        {
-            "id": 192,
-            "name": "Temulawak",
-            "latin_name": "(Curcuma xanthorrhiza)",
-            "image_link": "https://storage.googleapis.com/c242-ps076-herbamate-bucket/img-homapage/Temulawak.jpg",
-            "description": "tanaman herbal dengan rimpang berwarna kuning yang sering digunakan dalam pengobatan tradisional. Rimpangnya mengandung senyawa bioaktif dengan sifat antiradang dan memperbaiki metabolisme. Khasiatnya meliputi membantu meningkatkan fungsi hati, melancarkan pencernaan, dan memperbaiki kesehatan tubuh secara keseluruhan. Selain itu, tanaman ini juga dipercaya mampu meningkatkan imunitas."
-        }
-    ]
-}
+          "code": 200,
+          "message": "Herbs found successfully",
+          "data": [
+              {
+                  "id": 187,
+                  "name": "Temu Hitam",
+                  "latin_name": "(Curcuma aeruginosa)",
+                  "image_link": "image_link_herbals",
+                  "description": "tanaman herbal dengan rimpang gelap yang sering digunakan untuk kesehatan. Rimpangnya mengandung senyawa bioaktif dengan sifat antiinflamasi dan antikanker. Khasiatnya meliputi membantu meningkatkan fungsi hati, melindungi tubuh dari radikal bebas, dan memperbaiki kesehatan pencernaan. Selain itu, tanaman ini juga dipercaya mampu meningkatkan daya tahan tubuh."
+             },
+             {
+                  "id": 188,
+                  "name": "Temu Kunci",
+                  "latin_name": "(Boesenbergia pandurata)",
+                  "image_link": "image_link_herbals",
+                  "description": "tanaman herbal dengan rimpang kecil yang sering digunakan dalam pengobatan tradisional. Rimpangnya mengandung senyawa bioaktif dengan sifat antioksidan dan memperbaiki metabolisme. Khasiatnya meliputi membantu meningkatkan nafsu makan, menjaga kesehatan pencernaan, dan memperbaiki fungsi hati. Selain itu, tanaman ini juga dipercaya mampu meningkatkan daya tahan tubuh."
+            },
+            {
+                  "id": 189,
+                  "name": "Temu Putih",
+                  "latin_name": "(Curcuma zedoaria)",
+                  "image_link": "image_link_herbals",
+                  "description": "tanaman herbal dengan rimpang putih yang sering digunakan untuk kesehatan. Rimpangnya mengandung senyawa bioaktif dengan sifat antikanker dan antiinflamasi. Khasiatnya meliputi membantu meningkatkan fungsi hati, melawan sel kanker, dan memperbaiki kesehatan pencernaan. Selain itu, tanaman ini juga dipercaya mampu memperbaiki metabolisme tubuh."
+              },
+              {
+                  "id": 190,
+                  "name": "Temu Putri",
+                  "latin_name": "(Curcuma petiolata)",
+                  "image_link": "image_link_herbals",
+                  "description": "tanaman herbal yang memiliki rimpang khas dengan aroma harum dan digunakan secara tradisional dalam pengobatan herbal. Rimpangnya mengandung senyawa aktif seperti kurkumin, minyak atsiri, dan antioksidan. Khasiatnya meliputi membantu mengatasi gangguan pencernaan, meredakan peradangan, dan meningkatkan daya tahan tubuh. Selain untuk kesehatan, tanaman ini juga memiliki nilai estetika sebagai tanaman hias karena bentuk daunnya yang menarik."
+                },
+                {
+                    "id": 192,
+                    "name": "Temulawak",
+                    "latin_name": "(Curcuma xanthorrhiza)",
+                    "image_link": "image_link_herbals",
+                    "description": "tanaman herbal dengan rimpang berwarna kuning yang sering digunakan dalam pengobatan tradisional. Rimpangnya mengandung senyawa bioaktif dengan sifat antiradang dan memperbaiki metabolisme. Khasiatnya meliputi membantu meningkatkan fungsi hati, melancarkan pencernaan, dan memperbaiki kesehatan tubuh secara keseluruhan. Selain itu, tanaman ini juga dipercaya mampu meningkatkan imunitas."
+                }
+            ]
+         }
 
 
 
