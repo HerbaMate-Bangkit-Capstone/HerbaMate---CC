@@ -79,6 +79,7 @@ Steps to install and run this project on local.
          GET
          
        - Response body:
+         ```bash
          {
             "code": 200,
             "message": "Success Get All Data Herbal",
