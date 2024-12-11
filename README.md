@@ -80,26 +80,32 @@ Steps to install and run this project on local.
          
        - Response body:
          {
-    "code": 200,
-    "message": "Success Get All Data Herbal",
-    "data": [
-        {
-            "id": 1,
-            "name": "Adas",
-            "latin_name": "(Foeniculum vulgare)",
-            "image_link": "image_link_herbals",
-            "description": "tanaman rempah yang memiliki aroma khas dan sering digunakan sebagai bumbu dapur maupun obat tradisional. Tanaman ini memiliki daun halus berbentuk panjang dengan biji kecil yang mengandung minyak atsiri. Biasanya tumbuh di daerah beriklim hangat dengan tanah yang subur. Selain digunakan dalam masakan, tanaman ini dipercaya memiliki efek menenangkan. Khasiat utamanya meliputi meredakan perut kembung, memperlancar pencernaan, dan mengatasi gangguan pernapasan ringan."
-        },
-        {
-            "id": 2,
-            "name": "Akar manis",
-            "latin_name": "(Glycyrrhiza glabra)",
-            "image_link": "image_link_herbals",
-            "description": "tanaman perdu yang sering tumbuh di daerah tropis, dikenal dengan rasa manis yang berasal dari akarnya. Tanaman ini memiliki batang bercabang, daun majemuk, dan bunga kecil yang berwarna biru hingga ungu. Akar tanaman ini kaya akan senyawa glycyrrhizin yang memberikan rasa manis alami dan khasiat medis. Dalam pengobatan tradisional, sering digunakan untuk meredakan radang tenggorokan dan batuk. Tanaman ini juga diketahui memiliki sifat antiinflamasi dan meningkatkan kesehatan sistem imun."
-        },
-        dst.
-    ]
-}
+            "code": 200,
+            "message": "Success Get All Data Herbal",
+            "data": [
+                {
+                  "id": 1,
+                  "name": "Adas",
+                  "latin_name": "(Foeniculum vulgare)",
+                  "image_link": "image_link_herbals",
+                  "description": "tanaman rempah yang memiliki aroma khas dan sering digunakan sebagai bumbu dapur maupun obat tradisional. Tanaman ini memiliki daun halus berbentuk
+                                  panjang dengan biji kecil yang mengandung minyak atsiri. Biasanya tumbuh di daerah beriklim hangat dengan tanah yang subur. Selain digunakan dalam
+                                  masakan, tanaman ini dipercaya memiliki efek menenangkan. Khasiat utamanya meliputi meredakan perut kembung, memperlancar pencernaan, dan mengatasi
+                                  gangguan pernapasan ringan."
+                },
+                {
+                  "id": 2,
+                  "name": "Akar manis",
+                  "latin_name": "(Glycyrrhiza glabra)",
+                  "image_link": "image_link_herbals",
+                  "description": "tanaman perdu yang sering tumbuh di daerah tropis, dikenal dengan rasa manis yang berasal dari akarnya. Tanaman ini memiliki batang bercabang, daun
+                                   majemuk, dan bunga kecil yang berwarna biru hingga ungu. Akar tanaman ini kaya akan senyawa glycyrrhizin yang memberikan rasa manis alami dan khasiat
+                                   medis. Dalam pengobatan tradisional, sering digunakan untuk meredakan radang tenggorokan dan batuk. Tanaman ini juga diketahui memiliki sifat
+                                   antiinflamasi dan meningkatkan kesehatan sistem imun."
+                },
+                dst.
+            ]
+        }
 
      - GET detail data herb by ID:
        - Endpoint:
